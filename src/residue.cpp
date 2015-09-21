@@ -974,6 +974,21 @@ namespace OpenBabel
     _chain = (char) ('A' + chainnum - 1);
   }
 
+  void OBResidue::SetAuthCompId(const std::string auth_comp_id)
+  {
+    _auth_comp_id = auth_comp_id;
+  }
+
+  void OBResidue::SetAuthSeqId(unsigned int auth_seq_id)
+  {
+    _auth_seq_id = auth_seq_id;
+  }
+
+  void OBResidue::SetAuthAsymId(char auth_asym_id)
+  {
+    _auth_asym_id = auth_asym_id;
+  }
+
   void OBResidue::SetIdx(unsigned int idx)
   {
     _idx = idx;
@@ -1021,6 +1036,21 @@ namespace OpenBabel
   vector<OBAtom*> OBResidue::GetAtoms(void) const
   {
     return _atoms;
+  }
+
+  std::string    OBResidue::GetAuthCompId(void) const
+  {
+    return _auth_comp_id;
+  }
+
+  unsigned int OBResidue::GetAuthSeqId(void) const
+  {
+    return _auth_seq_id;
+  }
+
+  char OBResidue::GetAuthAsymId(void) const
+  {
+    return _auth_asym_id;
   }
 
   vector<OBBond*> OBResidue::GetBonds(bool exterior) const

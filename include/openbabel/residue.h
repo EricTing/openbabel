@@ -95,6 +95,10 @@ namespace OpenBabel {
     //! Set the atomic serial number for a given atom (see OBSerialNums)
     void    SetSerialNum(OBAtom *atom, unsigned int sernum);
 
+    void    SetAuthCompId(const std::string auth_comp_id);
+    void    SetAuthSeqId(unsigned int auth_seq_id);
+    void    SetAuthAsymId(char auth_asym_id);
+
     //! \return The residue name
     std::string    GetName(void)                  const;
     //! \return The residue number (in the sequence)
@@ -122,6 +126,11 @@ namespace OpenBabel {
     std::string    GetAtomID(OBAtom *atom)        const;
     //! \return the serial number of the supplied atom (uses OBSerialNums)
     unsigned       GetSerialNum(OBAtom *atom)     const;
+
+
+    std::string    GetAuthCompId(void) const;
+    unsigned int GetAuthSeqId(void) const;
+    char GetAuthAsymId(void) const;
 
     //! \return Whether this residue has the supplied amino acid property
     //!  defined from the OBAminoAcidProperty namespace
@@ -161,6 +170,10 @@ namespace OpenBabel {
     unsigned int              _reskey;//!< Residue key ID -- see SetResidueKeys()
     std::string               _resnum;//!< Residue number (i.e., in file) 23, 1B, etc.
     std::string               _resname;//!<Residue text name
+
+    std::string               _auth_comp_id;
+    unsigned int              _auth_seq_id;
+    char                      _auth_asym_id;
 
     std::vector<bool>         _hetatm;//!< Is a given atom a HETAM
     std::vector<std::string>  _atomid;//!< Residue atom text IDs
