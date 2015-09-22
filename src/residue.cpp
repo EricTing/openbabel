@@ -854,6 +854,9 @@ namespace OpenBabel
     _reskey   = OBResidueIndex::UNK;
     _resnum   = "";
     _resname  = "";
+    _auth_comp_id = "";
+    _auth_seq_id = 0;
+    _auth_asym_id = 'A';
     _vdata.clear();
 
   }
@@ -869,7 +872,9 @@ namespace OpenBabel
     _atomid   = src._atomid;
     _hetatm   = src._hetatm;
     _sernum   = src._sernum;
-
+    _auth_comp_id = src._auth_comp_id;
+    _auth_seq_id = src._auth_seq_id;
+    _auth_asym_id = src._auth_asym_id;
   }
 
   OBResidue::~OBResidue()
@@ -899,6 +904,9 @@ namespace OpenBabel
         _atomid   = src._atomid;
         _hetatm   = src._hetatm;
         _sernum   = src._sernum;
+        _auth_comp_id = src._auth_comp_id;
+        _auth_seq_id = src._auth_seq_id;
+        _auth_asym_id = src._auth_asym_id;
       }
 
     return(*this);
