@@ -963,6 +963,9 @@ namespace OpenBabel
     _reskey  = OBResidueIndex::UNK;
     _resnum  = "";
     _resname = "";
+    _auth_comp_id = "";
+    _auth_seq_id = 0;
+    _auth_asym_id = 'A';
 
     _atoms.clear();
     _atomid.clear();
@@ -982,7 +985,7 @@ namespace OpenBabel
     _chain = (char) ('A' + chainnum - 1);
   }
 
-  void OBResidue::SetAuthCompId(const std::string auth_comp_id)
+  void OBResidue::SetAuthCompId(const std::string& auth_comp_id)
   {
     _auth_comp_id = auth_comp_id;
   }
